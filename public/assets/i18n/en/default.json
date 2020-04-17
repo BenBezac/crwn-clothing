@@ -1,8 +1,10 @@
 {
-  "shop-now": "Shop now",
-  "men": "Men",
-  "women": "Women",
-  "hats": "Hats",
-  "jackets": "Jackets",
-  "sneakers": "Sneakers"
+  "shop-now": "shop now",
+  "menu-item-types": {
+    "men": "men",
+    "women": "women",
+    "hats": "hats",
+    "jackets": "jackets",
+    "sneakers": "sneakers"
+  }
 }

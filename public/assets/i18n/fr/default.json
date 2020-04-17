@@ -1,8 +1,10 @@
 {
-  "shop-now": "Acheter maintenant",
-  "men": "Hommes",
-  "women": "Femmes",
-  "hats": "Chapeaux",
-  "jackets": "Vestes",
-  "sneakers": "Sneakers"
+  "shop-now": "acheter maintenant",
+  "menu-item-types": {
+    "men": "hommes",
+    "women": "femmes",
+    "hats": "chapeaux",
+    "jackets": "vestes",
+    "sneakers": "sneakers"
+  }
 }
