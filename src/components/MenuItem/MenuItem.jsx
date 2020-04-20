@@ -5,7 +5,7 @@ import {useTranslation} from "react-i18next";
 import {withRouter} from "react-router-dom";
 
 const MenuItem = ({title, imageUrl, size, linkUrl, history, match}) => {
-    const {t, i18n} = useTranslation();
+    const {t} = useTranslation();
 
     return (
         <div
