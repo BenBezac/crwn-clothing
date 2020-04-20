@@ -6,5 +6,12 @@
     "hats": "chapeaux",
     "jackets": "vestes",
     "sneakers": "sneakers"
+  },
+  "sign-in": {
+    "has-already-an-account": "J'ai déjà un compte",
+    "sign-in-with-email-and-password": "Se connecter avec votre adresse e-mail et votre mot de passe",
+    "email": "Adresse E-mail",
+    "password": "Mot de Passe",
+    "submit-form": "Connexion"
   }
 }

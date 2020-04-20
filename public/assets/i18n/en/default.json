@@ -6,5 +6,12 @@
     "hats": "hats",
     "jackets": "jackets",
     "sneakers": "sneakers"
+  },
+  "sign-in": {
+    "has-already-an-account": "I already have an account",
+    "sign-in-with-email-and-password": "Sign in with your email and password",
+    "email": "Email",
+    "password": "Password",
+    "submit-form": "Submit Form"
   }
 }
