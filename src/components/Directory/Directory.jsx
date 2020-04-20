@@ -47,10 +47,10 @@ class Directory extends Component {
 
     render() {
 
-        const { sections } = this.state;
+        const {sections} = this.state;
         return (
             <div className="directory-menu">
-                { sections.map(({id, title, imageUrl, linkUrl, size}) => (
+                {sections.map(({id, title, imageUrl, linkUrl, size}) => (
                     <MenuItem
                         key={id}
                         title={title}
@@ -58,10 +58,10 @@ class Directory extends Component {
                         linkUrl={linkUrl}
                         size={size}
                     />
-                )) }
+                ))}
             </div>
         );
     }
-};
+}
 
 export default Directory;

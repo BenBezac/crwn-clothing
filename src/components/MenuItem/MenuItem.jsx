@@ -4,7 +4,7 @@ import './MenuItem.scss';
 import {useTranslation} from "react-i18next";
 
 const MenuItem = ({title, imageUrl, size}) => {
-    const { t, i18n } = useTranslation();
+    const {t, i18n} = useTranslation();
 
     return (
         <div
