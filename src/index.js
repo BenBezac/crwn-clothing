@@ -3,11 +3,14 @@ import ReactDOM from "react-dom";
 import "./index.scss";
 import App from "./App";
 import "./i18n";
+import {BrowserRouter} from "react-router-dom";
 
 ReactDOM.render(
     <React.StrictMode>
         <Suspense fallback={null}>
-            <App/>
+            <BrowserRouter>
+                <App/>
+            </BrowserRouter>
         </Suspense>
     </React.StrictMode>,
     document.getElementById("root")

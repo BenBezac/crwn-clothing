@@ -2,13 +2,15 @@ import React from 'react';
 
 import './MenuItem.scss';
 import {useTranslation} from "react-i18next";
+import {withRouter} from "react-router-dom";
 
-const MenuItem = ({title, imageUrl, size}) => {
+const MenuItem = ({title, imageUrl, size, linkUrl, history, match}) => {
     const {t, i18n} = useTranslation();
 
     return (
         <div
             className={`${size} menu-item`}
+            onClick={() => history.push(`${match.url}${linkUrl}`)}
         >
             <div
                 className="background-image"
@@ -23,4 +25,4 @@ const MenuItem = ({title, imageUrl, size}) => {
     );
 };
 
-export default MenuItem;
+export default withRouter(MenuItem);
