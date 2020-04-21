@@ -1,6 +1,6 @@
 {
   "shop-now": "acheter maintenant",
-  "menu-item-types": {
+  "collections": {
     "men": "hommes",
     "women": "femmes",
     "hats": "chapeaux",
@@ -12,6 +12,13 @@
     "sign-in-with-email-and-password": "Se connecter avec votre adresse e-mail et votre mot de passe",
     "email": "Adresse E-mail",
     "password": "Mot de Passe",
-    "submit-form": "Connexion"
+    "submit-form": "Connexion",
+    "with-google": "Connexion avec Google"
+  },
+  "header": {
+    "shop": "boutique",
+    "contact": "contact",
+    "sign-in": "Connexion",
+    "sign-out": "Déconnexion"
   }
 }

@@ -1,6 +1,6 @@
 {
   "shop-now": "shop now",
-  "menu-item-types": {
+  "collections": {
     "men": "men",
     "women": "women",
     "hats": "hats",
@@ -12,6 +12,13 @@
     "sign-in-with-email-and-password": "Sign in with your email and password",
     "email": "Email",
     "password": "Password",
-    "submit-form": "Submit Form"
+    "submit-form": "Submit Form",
+    "with-google": "Sign in with Google"
+  },
+  "header": {
+    "shop": "shop",
+    "contact": "contact",
+    "sign-in": "sign in",
+    "sign-out": "sign out"
   }
 }
