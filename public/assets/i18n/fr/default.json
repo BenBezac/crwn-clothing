@@ -15,6 +15,16 @@
     "submit-form": "Connexion",
     "with-google": "Connexion avec Google"
   },
+  "sign-up": {
+    "not-having-account": "Je n'ai pas de compte",
+    "sign-up-with-email-and-password": "Créer un compte avec votre adresse e-mail et votre mot de passe",
+    "display-name": "Nom",
+    "email": "Adresse E-mail",
+    "password": "Mot de Passe",
+    "confirm-password": "Mot de Passe (confirmer)",
+    "submit-form": "Créer le compte",
+    "password-dont-match": "Les Mots de Passe ne correspondentp as !"
+  },
   "header": {
     "shop": "boutique",
     "contact": "contact",

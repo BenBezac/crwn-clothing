@@ -15,6 +15,16 @@
     "submit-form": "Submit Form",
     "with-google": "Sign in with Google"
   },
+  "sign-up": {
+    "not-having-account": "I do not have an account",
+    "sign-up-with-email-and-password": "Sign up with your email and password",
+    "display-name": "Display name",
+    "email": "Email",
+    "password": "Password",
+    "confirm-password": "Password (confirm)",
+    "submit-form": "Sign up",
+    "password-dont-match": "Passwords don't match !"
+  },
   "header": {
     "shop": "shop",
     "contact": "contact",

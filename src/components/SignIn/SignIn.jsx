@@ -8,20 +8,20 @@ import { signInWithGoogle } from "../../firebase/firebaseUtils";
 
 class SignIn extends Component {
     state = {
-        email: "",
-        password: "",
+        email: '',
+        password: '',
     };
 
     handleSubmit = (event) => {
         event.preventDefault();
 
         this.setState({
-            email: "",
-            password: "",
+            email: '',
+            password: '',
         });
     };
 
-    handleChange = (event) => {
+    handleChange = event => {
         const { value, name } = event.target;
         this.setState({ [name]: value });
     };
@@ -34,7 +34,7 @@ class SignIn extends Component {
                 <h2 className="title">{t("sign-in.has-already-an-account")}</h2>
                 <span>{t("sign-in.sign-in-with-email-and-password")}</span>
 
-                <form onSubmit={this.handleSubmit}>
+                <form className="sign-in-form" onSubmit={this.handleSubmit}>
                     <FormInput
                         type="email"
                         name="email"
