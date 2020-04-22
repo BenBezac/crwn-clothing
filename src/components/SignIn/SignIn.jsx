@@ -63,7 +63,7 @@ class SignIn extends Component {
                         <CustomButton type="submit">
                             {t('sign-in.submit-form')}
                         </CustomButton>
-                        <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
+                        <CustomButton type="button" onClick={signInWithGoogle} isGoogleSignIn>
                             {t('sign-in.with-google')}
                         </CustomButton>
                     </div>
