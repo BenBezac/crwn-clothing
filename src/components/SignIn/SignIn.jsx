@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import { withTranslation } from "react-i18next";
-import FormInput from "../FormInput/FormInput";
+import React, { Component } from 'react';
+import { withTranslation } from 'react-i18next';
+import FormInput from '../FormInput/FormInput';
 
-import "./SignIn.scss";
-import CustomButton from "../CustomButton/CustomButton";
-import { signInWithGoogle } from "../../firebase/firebaseUtils";
+import './SignIn.scss';
+import CustomButton from '../CustomButton/CustomButton';
+import { auth, signInWithGoogle } from '../../firebase/firebaseUtils';
 
 class SignIn extends Component {
     state = {
@@ -12,16 +12,24 @@ class SignIn extends Component {
         password: '',
     };
 
-    handleSubmit = (event) => {
+    handleSubmit = async (event) => {
         event.preventDefault();
 
-        this.setState({
-            email: '',
-            password: '',
-        });
+        const { email, password } = this.state;
+
+        try {
+            await auth.signInWithEmailAndPassword(email, password);
+
+            this.setState({
+                email: '',
+                password: '',
+            });
+        } catch (err) {
+            console.error(err);
+        }
     };
 
-    handleChange = event => {
+    handleChange = (event) => {
         const { value, name } = event.target;
         this.setState({ [name]: value });
     };
@@ -31,8 +39,8 @@ class SignIn extends Component {
         const { email, password } = this.state;
         return (
             <div className="sign-in">
-                <h2 className="title">{t("sign-in.has-already-an-account")}</h2>
-                <span>{t("sign-in.sign-in-with-email-and-password")}</span>
+                <h2 className="title">{t('sign-in.has-already-an-account')}</h2>
+                <span>{t('sign-in.sign-in-with-email-and-password')}</span>
 
                 <form className="sign-in-form" onSubmit={this.handleSubmit}>
                     <FormInput
@@ -40,7 +48,7 @@ class SignIn extends Component {
                         name="email"
                         value={email}
                         required
-                        label={t("sign-in.email")}
+                        label={t('sign-in.email')}
                         handleChange={this.handleChange}
                     />
                     <FormInput
@@ -48,15 +56,15 @@ class SignIn extends Component {
                         name="password"
                         value={password}
                         required
-                        label={t("sign-in.password")}
+                        label={t('sign-in.password')}
                         handleChange={this.handleChange}
                     />
                     <div className="buttons">
                         <CustomButton type="submit">
-                            {t("sign-in.submit-form")}
+                            {t('sign-in.submit-form')}
                         </CustomButton>
                         <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
-                            {t("sign-in.with-google")}
+                            {t('sign-in.with-google')}
                         </CustomButton>
                     </div>
                 </form>
