@@ -1,14 +1,16 @@
-import React from "react";
+import React from 'react';
 
-import "./CollectionPreview.scss";
-import CollectionItem from "../CollectionItem/CollectionItem";
-import { useTranslation } from "react-i18next";
+import './CollectionPreview.scss';
+import CollectionItem from '../CollectionItem/CollectionItem';
+import { useTranslation } from 'react-i18next';
 
 const CollectionPreview = ({ routeName, items }) => {
     const { t } = useTranslation();
     return (
         <div className="collection-preview">
-            <h1 className="title">{t(`collections.${routeName}`).toUpperCase()}</h1>
+            <h1 className="title">
+                {t(`collections.${routeName}`).toUpperCase()}
+            </h1>
             <div className="preview">
                 {items
                     .filter((item, idx) => idx < 4)

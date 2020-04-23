@@ -1,11 +1,11 @@
 import React from 'react';
 
 import './MenuItem.scss';
-import {useTranslation} from "react-i18next";
-import {withRouter} from "react-router-dom";
+import { useTranslation } from 'react-i18next';
+import { withRouter } from 'react-router-dom';
 
-const MenuItem = ({title, imageUrl, size, linkUrl, history, match}) => {
-    const {t} = useTranslation();
+const MenuItem = ({ title, imageUrl, size, linkUrl, history, match }) => {
+    const { t } = useTranslation();
 
     return (
         <div
@@ -15,10 +15,13 @@ const MenuItem = ({title, imageUrl, size, linkUrl, history, match}) => {
             <div
                 className="background-image"
                 style={{
-                    backgroundImage: `url(${imageUrl})`
-                }}/>
+                    backgroundImage: `url(${imageUrl})`,
+                }}
+            />
             <div className="content">
-                <h1 className="title">{t(`collections.${title}`).toUpperCase()}</h1>
+                <h1 className="title">
+                    {t(`collections.${title}`).toUpperCase()}
+                </h1>
                 <span className="subtitle">{t('shop-now').toUpperCase()}</span>
             </div>
         </div>

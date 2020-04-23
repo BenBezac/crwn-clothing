@@ -1,22 +1,22 @@
-import firebase from "firebase/app";
-import "firebase/firestore";
-import "firebase/auth";
+import firebase from 'firebase/app';
+import 'firebase/firestore';
+import 'firebase/auth';
 
 const config = {
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-    authDomain: "crwn-clothing-db-82ce1.firebaseapp.com",
-    databaseURL: "https://crwn-clothing-db-82ce1.firebaseio.com",
-    projectId: "crwn-clothing-db-82ce1",
-    storageBucket: "crwn-clothing-db-82ce1.appspot.com",
-    messagingSenderId: "255519042129",
-    appId: "1:255519042129:web:e689aca64cf70d6da3a670",
-    measurementId: "G-PHM2MT2SYK",
+    authDomain: 'crwn-clothing-db-82ce1.firebaseapp.com',
+    databaseURL: 'https://crwn-clothing-db-82ce1.firebaseio.com',
+    projectId: 'crwn-clothing-db-82ce1',
+    storageBucket: 'crwn-clothing-db-82ce1.appspot.com',
+    messagingSenderId: '255519042129',
+    appId: '1:255519042129:web:e689aca64cf70d6da3a670',
+    measurementId: 'G-PHM2MT2SYK',
 };
 
 firebase.initializeApp(config);
 
 const provider = new firebase.auth.GoogleAuthProvider();
-provider.setCustomParameters({ prompt: "select_account" });
+provider.setCustomParameters({ prompt: 'select_account' });
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
@@ -39,7 +39,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
                 ...additionalData,
             });
         } catch (err) {
-            console.error("Error creating user", err.message);
+            console.error('Error creating user', err.message);
         }
     }
 

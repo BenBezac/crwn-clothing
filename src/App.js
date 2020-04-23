@@ -1,12 +1,12 @@
-import React from "react";
-import { Route, Switch } from "react-router-dom";
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 
-import HomePage from "./pages/HomePage/HomePage";
-import ShopPage from "./pages/ShopPage/ShopPage";
-import Header from "./components/Header/Header";
-import SignInAndSignUpPage from "./pages/SignInAndSignUpPage/SignInAndSignUpPage";
+import HomePage from './pages/home/HomePage';
+import ShopPage from './pages/shop/ShopPage';
+import Header from './components/Header/Header';
+import SignInAndSignUpPage from './pages/sign-in-and-sign-up/SignInAndSignUpPage';
 
-import { auth, createUserProfileDocument } from "./firebase/firebaseUtils";
+import { auth, createUserProfileDocument } from './firebase/firebaseUtils';
 
 class App extends React.Component {
     state = {
@@ -28,7 +28,6 @@ class App extends React.Component {
                         },
                     });
                 });
-
             }
 
             this.setState({ currentUser: userAuth });
