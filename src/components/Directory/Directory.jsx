@@ -1,28 +1,16 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 import './Directory.scss';
-import MenuItem from "../MenuItem/MenuItem";
-import SECTION_DATA from "../../pages/HomePage/SECTION_DATA";
+import MenuItem from '../MenuItem/MenuItem';
 
 class Directory extends Component {
-    constructor() {
-        super();
-
-        this.state = {
-            sections: SECTION_DATA
-        }
-    }
 
     render() {
-
-        const {sections} = this.state;
+        const { sections } = this.props;
         return (
             <div className="directory-menu">
-                {sections.map(({id, ...otherSectionProps}) => (
-                    <MenuItem
-                        key={id}
-                        {...otherSectionProps}
-                    />
+                {sections.map(({ id, ...otherSectionProps }) => (
+                    <MenuItem key={id} {...otherSectionProps} />
                 ))}
             </div>
         );

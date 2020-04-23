@@ -1,19 +1,19 @@
-import React, { Component } from "react";
-import { withTranslation } from "react-i18next";
+import React, { Component } from 'react';
+import { withTranslation } from 'react-i18next';
 
-import { auth, createUserProfileDocument } from "../../firebase/firebaseUtils";
+import { auth, createUserProfileDocument } from '../../firebase/firebaseUtils';
 
-import FormInput from "../FormInput/FormInput";
-import CustomButton from "../CustomButton/CustomButton";
+import FormInput from '../FormInput/FormInput';
+import CustomButton from '../CustomButton/CustomButton';
 
-import "./SignUp.scss";
+import './SignUp.scss';
 
 class SignUp extends Component {
     state = {
-        displayName: "",
-        email: "",
-        password: "",
-        confirmPassword: "",
+        displayName: '',
+        email: '',
+        password: '',
+        confirmPassword: '',
     };
 
     handleSubmit = async (event) => {
@@ -23,7 +23,7 @@ class SignUp extends Component {
         const { displayName, email, password, confirmPassword } = this.state;
 
         if (password !== confirmPassword) {
-            alert(t("sign-up.password-dont-match"));
+            alert(t('sign-up.password-dont-match'));
             return;
         }
 
@@ -35,10 +35,10 @@ class SignUp extends Component {
             await createUserProfileDocument(user, { displayName });
 
             this.setState({
-                displayName: "",
-                email: "",
-                password: "",
-                confirmPassword: "",
+                displayName: '',
+                email: '',
+                password: '',
+                confirmPassword: '',
             });
         } catch (err) {
             console.error(err);
@@ -55,8 +55,8 @@ class SignUp extends Component {
         const { displayName, email, password, confirmPassword } = this.state;
         return (
             <div className="sign-up">
-                <h2 className="title">{t("sign-up.not-having-account")}</h2>
-                <span>{t("sign-up.sign-up-with-email-and-password")}</span>
+                <h2 className="title">{t('sign-up.not-having-account')}</h2>
+                <span>{t('sign-up.sign-up-with-email-and-password')}</span>
 
                 <form className="sign-up-form" onSubmit={this.handleSubmit}>
                     <FormInput
@@ -64,7 +64,7 @@ class SignUp extends Component {
                         name="displayName"
                         value={displayName}
                         required
-                        label={t("sign-up.display-name")}
+                        label={t('sign-up.display-name')}
                         handleChange={this.handleChange}
                     />
                     <FormInput
@@ -72,7 +72,7 @@ class SignUp extends Component {
                         name="email"
                         value={email}
                         required
-                        label={t("sign-up.email")}
+                        label={t('sign-up.email')}
                         handleChange={this.handleChange}
                     />
                     <FormInput
@@ -80,7 +80,7 @@ class SignUp extends Component {
                         name="password"
                         value={password}
                         required
-                        label={t("sign-up.password")}
+                        label={t('sign-up.password')}
                         handleChange={this.handleChange}
                     />
                     <FormInput
@@ -88,11 +88,11 @@ class SignUp extends Component {
                         name="confirmPassword"
                         value={confirmPassword}
                         required
-                        label={t("sign-up.confirm-password")}
+                        label={t('sign-up.confirm-password')}
                         handleChange={this.handleChange}
                     />
                     <CustomButton type="submit">
-                        {t("sign-up.submit-form")}
+                        {t('sign-up.submit-form')}
                     </CustomButton>
                 </form>
             </div>
