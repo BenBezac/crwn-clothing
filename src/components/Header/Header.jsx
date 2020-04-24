@@ -6,10 +6,12 @@ import './Header.scss';
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 import { auth } from '../../firebase/firebaseUtils';
 import { useTranslation } from 'react-i18next';
-import {connect} from "react-redux";
+import { connect } from 'react-redux';
+import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 
 const Header = ({ currentUser }) => {
     const { t } = useTranslation();
+
     return (
         <div className="header">
             <Link className="logo-container" to="/">
@@ -34,13 +36,14 @@ const Header = ({ currentUser }) => {
                         {t('header.sign-in').toUpperCase()}
                     </Link>
                 )}
+                <LanguageSwitcher />
             </div>
         </div>
     );
 };
 
-const mapToStateToProps = state => ({
-    currentUser: state.user.currentUser
-})
+const mapToStateToProps = (state) => ({
+    currentUser: state.user.currentUser,
+});
 
 export default connect(mapToStateToProps)(Header);
