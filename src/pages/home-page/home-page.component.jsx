@@ -1,7 +1,7 @@
 import React from 'react';
-import './Homepage.scss';
-import Directory from '../../components/Directory/Directory';
-import SECTION_DATA from "./SECTION_DATA";
+import './home-page.styles.scss';
+import Directory from '../../components/directory/directory.component';
+import SECTION_DATA from "./section.data";
 
 const HomePage = () => {
     const sections = SECTION_DATA;

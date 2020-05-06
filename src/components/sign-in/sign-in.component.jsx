@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { withTranslation } from 'react-i18next';
-import FormInput from '../FormInput/FormInput';
+import FormInputComponent from '../form-input/form-input.component';
 
-import './SignIn.scss';
-import CustomButton from '../CustomButton/CustomButton';
-import { auth, signInWithGoogle } from '../../firebase/firebaseUtils';
+import './sign-in.styles.scss';
+import CustomButton from '../custom-button/custom.button';
+import { auth, signInWithGoogle } from '../../firebase/firebase.utils';
 
 class SignIn extends Component {
     state = {
@@ -43,7 +43,7 @@ class SignIn extends Component {
                 <span>{t('sign-in.sign-in-with-email-and-password')}</span>
 
                 <form className="sign-in-form" onSubmit={this.handleSubmit}>
-                    <FormInput
+                    <FormInputComponent
                         type="email"
                         name="email"
                         value={email}
@@ -51,7 +51,7 @@ class SignIn extends Component {
                         label={t('sign-in.email')}
                         handleChange={this.handleChange}
                     />
-                    <FormInput
+                    <FormInputComponent
                         type="password"
                         name="password"
                         value={password}

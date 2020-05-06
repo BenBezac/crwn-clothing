@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { withTranslation } from 'react-i18next';
 
-import { auth, createUserProfileDocument } from '../../firebase/firebaseUtils';
+import { auth, createUserProfileDocument } from '../../firebase/firebase.utils';
 
-import FormInput from '../FormInput/FormInput';
-import CustomButton from '../CustomButton/CustomButton';
+import FormInputComponent from '../form-input/form-input.component';
+import CustomButton from '../custom-button/custom.button';
 
-import './SignUp.scss';
+import './sign-up.styles.scss';
 
 class SignUp extends Component {
     state = {
@@ -59,7 +59,7 @@ class SignUp extends Component {
                 <span>{t('sign-up.sign-up-with-email-and-password')}</span>
 
                 <form className="sign-up-form" onSubmit={this.handleSubmit}>
-                    <FormInput
+                    <FormInputComponent
                         type="text"
                         name="displayName"
                         value={displayName}
@@ -67,7 +67,7 @@ class SignUp extends Component {
                         label={t('sign-up.display-name')}
                         handleChange={this.handleChange}
                     />
-                    <FormInput
+                    <FormInputComponent
                         type="email"
                         name="email"
                         value={email}
@@ -75,7 +75,7 @@ class SignUp extends Component {
                         label={t('sign-up.email')}
                         handleChange={this.handleChange}
                     />
-                    <FormInput
+                    <FormInputComponent
                         type="password"
                         name="password"
                         value={password}
@@ -83,7 +83,7 @@ class SignUp extends Component {
                         label={t('sign-up.password')}
                         handleChange={this.handleChange}
                     />
-                    <FormInput
+                    <FormInputComponent
                         type="password"
                         name="confirmPassword"
                         value={confirmPassword}

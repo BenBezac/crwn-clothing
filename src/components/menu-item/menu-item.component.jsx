@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './MenuItem.scss';
+import './menu-item.styles.scss';
 import { useTranslation } from 'react-i18next';
 import { withRouter } from 'react-router-dom';
 
