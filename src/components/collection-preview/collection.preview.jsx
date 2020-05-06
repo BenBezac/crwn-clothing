@@ -1,7 +1,7 @@
 import React from 'react';
 
-import './CollectionPreview.scss';
-import CollectionItem from '../CollectionItem/CollectionItem';
+import './collection-preview.styles.scss';
+import CollectionItem from '../collection-item/collection-item.component';
 import { useTranslation } from 'react-i18next';
 
 const CollectionPreview = ({ routeName, items }) => {

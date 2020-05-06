@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import './Header.scss';
+import './header.styles.scss';
 
 import { ReactComponent as Logo } from '../../assets/crown.svg';
-import { auth } from '../../firebase/firebaseUtils';
+import { auth } from '../../firebase/firebase.utils';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
+import LanguageSwitcher from '../language-switcher/language-switcher.component';
 
 const Header = ({ currentUser }) => {
     const { t } = useTranslation();
