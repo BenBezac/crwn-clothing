@@ -30,5 +30,8 @@
     "contact": "contact",
     "sign-in": "Connexion",
     "sign-out": "Déconnexion"
+  },
+  "cart": {
+    "go-to-checkout": "commander"
   }
 }

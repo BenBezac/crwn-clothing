@@ -8,8 +8,10 @@ import { auth } from '../../firebase/firebase.utils';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import LanguageSwitcher from '../language-switcher/language-switcher.component';
+import CartIcon from '../cart-icon/cart-icon.component';
+import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 
-const Header = ({ currentUser }) => {
+const Header = ({ currentUser, hidden }) => {
     const { t } = useTranslation();
 
     return (
@@ -36,14 +38,17 @@ const Header = ({ currentUser }) => {
                         {t('header.sign-in').toUpperCase()}
                     </Link>
                 )}
+                <CartIcon />
                 <LanguageSwitcher />
             </div>
+            {hidden ? null : <CartDropdown />}
         </div>
     );
 };
 
-const mapToStateToProps = (state) => ({
-    currentUser: state.user.currentUser,
+const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({
+    currentUser,
+    hidden,
 });
 
-export default connect(mapToStateToProps)(Header);
+export default connect(mapStateToProps)(Header);
