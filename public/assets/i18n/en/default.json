@@ -32,6 +32,7 @@
     "sign-out": "sign out"
   },
   "cart": {
-    "go-to-checkout": "go to checkout"
+    "go-to-checkout": "go to checkout",
+    "add-to-cart": "add to cart"
   }
 }
