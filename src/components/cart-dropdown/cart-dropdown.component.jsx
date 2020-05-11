@@ -5,7 +5,7 @@ import CustomButton from '../custom-button/custom.button';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import CartItem from "../cart-item/cart-item.component";
-import {selectCartItems} from "../../redux/cart/cart.selector";
+import {selectCartItems} from "../../redux/cart/cart.selectors";
 
 const CartDropdown = ({ cartItems }) => {
     const { t } = useTranslation();
