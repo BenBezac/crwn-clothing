@@ -5,6 +5,7 @@ import CustomButton from '../custom-button/custom.button';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import CartItem from "../cart-item/cart-item.component";
+import {selectCartItems} from "../../redux/cart/cart.selector";
 
 const CartDropdown = ({ cartItems }) => {
     const { t } = useTranslation();
@@ -24,8 +25,8 @@ const CartDropdown = ({ cartItems }) => {
     );
 };
 
-const mapStateToProps = ({ cart: { cartItems } }) => ({
-    cartItems,
+const mapStateToProps = (state) => ({
+    cartItems: selectCartItems(state),
 });
 
 export default connect(mapStateToProps)(CartDropdown);
