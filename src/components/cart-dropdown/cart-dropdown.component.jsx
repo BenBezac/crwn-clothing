@@ -1,32 +1,33 @@
 import React from 'react';
+import {useTranslation} from 'react-i18next';
+import {connect} from 'react-redux';
+import {createStructuredSelector} from 'reselect';
+
+import {selectCartItems} from '../../redux/cart/cart.selectors';
+
+import CustomButtonComponent from '../custom-button/custom.button.component';
+import CartItem from '../cart-item/cart-item.component';
 
 import './cart-dropdown.styles.scss';
-import CustomButton from '../custom-button/custom.button';
-import { useTranslation } from 'react-i18next';
-import { connect } from 'react-redux';
-import CartItem from "../cart-item/cart-item.component";
-import {selectCartItems} from "../../redux/cart/cart.selectors";
 
 const CartDropdown = ({ cartItems }) => {
     const { t } = useTranslation();
     return (
         <div className="cart-dropdown">
             <div className="cart-items">
-                {
-                    cartItems.map(
-                        cartItem => <CartItem key={cartItem.id} item={cartItem}/>
-                    )
-                }
+                {cartItems.map((cartItem) => (
+                    <CartItem key={cartItem.id} item={cartItem} />
+                ))}
             </div>
-            <CustomButton>
+            <CustomButtonComponent>
                 {t('cart.go-to-checkout').toUpperCase()}
-            </CustomButton>
+            </CustomButtonComponent>
         </div>
     );
 };
 
-const mapStateToProps = (state) => ({
-    cartItems: selectCartItems(state),
+const mapStateToProps = createStructuredSelector({
+    cartItems: selectCartItems,
 });
 
 export default connect(mapStateToProps)(CartDropdown);
