@@ -9,8 +9,8 @@ import { setCurrentUser } from './redux/user/user.actions';
 import {selectCurrentUser} from "./redux/user/user.selectors";
 
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
-import HomePage from './pages/home-page/home-page.component';
-import ShopPage from './pages/shop-page/shop-page.component';
+import HomePage from './pages/homepage/homepage.component';
+import ShopPage from './pages/shop/shop.component';
 import Header from './components/header/header.component';
 
 class App extends React.Component {
