@@ -1,9 +1,9 @@
 import React from 'react';
-import {useTranslation} from 'react-i18next';
-import {connect} from 'react-redux';
-import {createStructuredSelector} from 'reselect';
+import { useTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 
-import {selectCartItems} from '../../redux/cart/cart.selectors';
+import { selectCartItems } from '../../redux/cart/cart.selectors';
 
 import CustomButtonComponent from '../custom-button/custom.button.component';
 import CartItem from '../cart-item/cart-item.component';
@@ -15,9 +15,13 @@ const CartDropdown = ({ cartItems }) => {
     return (
         <div className="cart-dropdown">
             <div className="cart-items">
-                {cartItems.map((cartItem) => (
-                    <CartItem key={cartItem.id} item={cartItem} />
-                ))}
+                {cartItems.length > 0 ? (
+                    cartItems.map((cartItem) => (
+                        <CartItem key={cartItem.id} item={cartItem} />
+                    ))
+                ) : (
+                    <span className="empty-message">{t('cart.empty')}</span>
+                )}
             </div>
             <CustomButtonComponent>
                 {t('cart.go-to-checkout').toUpperCase()}
