@@ -22,7 +22,7 @@ const LanguageSwitcher = () => {
                 {availableLanguages
                     .filter((lng) => lng !== currentLanguage)
                     .map((lng) => (
-                        <div onClick={() => onLanguageChange(lng)}>
+                        <div key={lng} onClick={() => onLanguageChange(lng)}>
                             {lng.toUpperCase()}
                         </div>
                     ))}

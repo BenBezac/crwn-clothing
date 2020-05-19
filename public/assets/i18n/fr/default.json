@@ -35,5 +35,14 @@
     "go-to-checkout": "commander",
     "add-to-cart": "ajouter au panier",
     "empty": "Votre panier est vide"
+  },
+  "checkout": {
+    "header": {
+      "product": "Produit",
+      "description": "Description",
+      "quantity": "Quantité",
+      "price": "Prix",
+      "remove": "Supprimer"
+    }
   }
 }

@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { auth } from '../../firebase/firebase.utils';
 
 import {selectCurrentUser} from "../../redux/user/user.selectors";
-import {selectCartHidden} from "../../redux/cart/cart.selector";
+import {selectCartHidden} from "../../redux/cart/cart.selectors";
 
 import LanguageSwitcher from '../language-switcher/language-switcher.component';
 import CartIcon from '../cart-icon/cart-icon.component';
