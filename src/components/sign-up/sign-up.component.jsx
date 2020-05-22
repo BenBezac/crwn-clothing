@@ -4,7 +4,7 @@ import { withTranslation } from 'react-i18next';
 import { auth, createUserProfileDocument } from '../../firebase/firebase.utils';
 
 import FormInputComponent from '../form-input/form-input.component';
-import CustomButton from '../custom-button/custom.button';
+import CustomButtonComponent from '../custom-button/custom.button.component';
 
 import './sign-up.styles.scss';
 
@@ -91,9 +91,9 @@ class SignUp extends Component {
                         label={t('sign-up.confirm-password')}
                         handleChange={this.handleChange}
                     />
-                    <CustomButton type="submit">
+                    <CustomButtonComponent type="submit">
                         {t('sign-up.submit-form')}
-                    </CustomButton>
+                    </CustomButtonComponent>
                 </form>
             </div>
         );

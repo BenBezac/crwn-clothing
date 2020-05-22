@@ -30,5 +30,19 @@
     "contact": "contact",
     "sign-in": "sign in",
     "sign-out": "sign out"
+  },
+  "cart": {
+    "go-to-checkout": "go to checkout",
+    "add-to-cart": "add to cart",
+    "empty": "Your cart is empty"
+  },
+  "checkout": {
+    "header": {
+      "product": "Product",
+      "description": "Description",
+      "quantity": "Quantity",
+      "price": "Price",
+      "remove": "Remove"
+    }
   }
 }

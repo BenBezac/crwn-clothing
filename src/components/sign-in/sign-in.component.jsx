@@ -3,7 +3,7 @@ import { withTranslation } from 'react-i18next';
 import FormInputComponent from '../form-input/form-input.component';
 
 import './sign-in.styles.scss';
-import CustomButton from '../custom-button/custom.button';
+import CustomButtonComponent from '../custom-button/custom.button.component';
 import { auth, signInWithGoogle } from '../../firebase/firebase.utils';
 
 class SignIn extends Component {
@@ -60,16 +60,16 @@ class SignIn extends Component {
                         handleChange={this.handleChange}
                     />
                     <div className="buttons">
-                        <CustomButton type="submit">
+                        <CustomButtonComponent type="submit">
                             {t('sign-in.submit-form')}
-                        </CustomButton>
-                        <CustomButton
+                        </CustomButtonComponent>
+                        <CustomButtonComponent
                             type="button"
                             onClick={signInWithGoogle}
                             isGoogleSignIn
                         >
                             {t('sign-in.with-google')}
-                        </CustomButton>
+                        </CustomButtonComponent>
                     </div>
                 </form>
             </div>

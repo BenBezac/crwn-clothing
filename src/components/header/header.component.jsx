@@ -1,15 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-import './header.styles.scss';
-
-import { ReactComponent as Logo } from '../../assets/crown.svg';
-import { auth } from '../../firebase/firebase.utils';
+import {createStructuredSelector} from "reselect";
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import LanguageSwitcher from '../language-switcher/language-switcher.component';
 
-const Header = ({ currentUser }) => {
+import { auth } from '../../firebase/firebase.utils';
+
+import {selectCurrentUser} from "../../redux/user/user.selectors";
+import {selectCartHidden} from "../../redux/cart/cart.selectors";
+
+import LanguageSwitcher from '../language-switcher/language-switcher.component';
+import CartIcon from '../cart-icon/cart-icon.component';
+import CartDropdown from '../cart-dropdown/cart-dropdown.component';
+
+import './header.styles.scss';
+import { ReactComponent as Logo } from '../../assets/crown.svg';
+
+const Header = ({ currentUser, hidden }) => {
     const { t } = useTranslation();
 
     return (
@@ -36,14 +43,17 @@ const Header = ({ currentUser }) => {
                         {t('header.sign-in').toUpperCase()}
                     </Link>
                 )}
+                <CartIcon />
                 <LanguageSwitcher />
             </div>
+            {hidden ? null : <CartDropdown />}
         </div>
     );
 };
 
-const mapToStateToProps = (state) => ({
-    currentUser: state.user.currentUser,
+const mapStateToProps = createStructuredSelector({
+    currentUser: selectCurrentUser,
+    hidden: selectCartHidden,
 });
 
-export default connect(mapToStateToProps)(Header);
+export default connect(mapStateToProps)(Header);
