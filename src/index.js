@@ -1,18 +1,24 @@
 import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
-import './index.scss';
-import App from './App';
-import './i18n';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import store from "./redux/store";
+import { PersistGate } from 'redux-persist/integration/react';
+
+import './i18n';
+import { store, persistor } from './redux/store';
+
+import App from './App';
+
+import './index.scss';
 
 ReactDOM.render(
     <React.StrictMode>
         <Suspense fallback={null}>
             <Provider store={store}>
                 <BrowserRouter>
-                    <App />
+                    <PersistGate persistor={persistor}>
+                        <App />
+                    </PersistGate>
                 </BrowserRouter>
             </Provider>
         </Suspense>
