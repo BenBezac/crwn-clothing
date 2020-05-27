@@ -1,11 +1,15 @@
 {
   "name": "crwn-clothing",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "@types/jest": "^25.2.3",
+    "@types/node": "^14.0.5",
+    "@types/react": "^16.9.35",
+    "@types/react-dom": "^16.9.8",
     "firebase": "^7.14.1",
     "i18next": "^19.4.2",
     "i18next-browser-languagedetector": "^4.0.2",
@@ -20,7 +24,8 @@
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
     "redux-persist": "^6.0.0",
-    "reselect": "^4.0.0"
+    "reselect": "^4.0.0",
+    "typescript": "^3.9.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -51,5 +56,8 @@
     "node": "13.11.0",
     "yarn": "1.22.4",
     "npm": "6.14.4"
+  },
+  "devDependencies": {
+    "@types/redux-logger": "^3.0.7"
   }
 }
