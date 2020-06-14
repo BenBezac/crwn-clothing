@@ -1,4 +1,12 @@
-const SECTION_DATA = [
+export interface Section {
+    id: number,
+    title: string,
+    imageUrl: string,
+    linkUrl: string,
+    size?: string,
+}
+
+const SECTION_DATA: Array<Section> = [
     {
         title: 'hats',
         imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
