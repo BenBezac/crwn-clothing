@@ -1,25 +1,45 @@
-import {createSelector, Selector} from 'reselect';
-import {State} from "../root-reducer";
-import {CartState} from "./types";
+import {createSelector, OutputSelector, Selector} from 'reselect';
+import {State} from '../root-reducer';
+import {CartItem, CartState} from './types';
 
 const selectCart: Selector<State, CartState> = (state: State) => state.cart;
 
-export const selectCartItems = createSelector(
+export const selectCartItems: OutputSelector<
+    State,
+    Array<CartItem>,
+    (cart: CartState) => Array<CartItem>
+> = createSelector<State, CartState, Array<CartItem>>(
     [selectCart],
-    (cart) => cart.cartItems
+    (cart: CartState) => cart.cartItems
 );
 
-export const selectCartItemsCount = createSelector(
+export const selectCartItemsCount: OutputSelector<
+    State,
+    number,
+    (cartItems: Array<CartItem>) => number
+> = createSelector<State, Array<CartItem>, number>(
     [selectCartItems],
     (cartItems) => cartItems.reduce((acc, { quantity }) => acc + quantity, 0)
 );
 
-export const selectCartHidden = createSelector(
+export const selectCartHidden: OutputSelector<
+    State,
+    boolean,
+    (cart: CartState) => boolean
+> = createSelector<State, CartState, boolean>(
     [selectCart],
-    (cart) => cart.hidden
+    (cart: CartState) => cart.hidden
 );
 
-export const selectCartTotal = createSelector(
+export const selectCartTotal: OutputSelector<
+    State,
+    number,
+    (cartItems: Array<CartItem>) => number
+> = createSelector<State, Array<CartItem>, number>(
     [selectCartItems],
-    (cartItems) => cartItems.reduce((acc, { quantity, price }) => acc + quantity*price, 0)
+    (cartItems) =>
+        cartItems.reduce(
+            (acc, { quantity, price }) => acc + quantity * price,
+            0
+        )
 );
