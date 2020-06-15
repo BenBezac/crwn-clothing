@@ -1,13 +1,13 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
-import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
+import {withRouter} from 'react-router-dom';
+import {useTranslation} from 'react-i18next';
+import {connect} from 'react-redux';
+import {createStructuredSelector} from 'reselect';
 
-import { selectCartItems } from '../../redux/cart/cart.selectors';
-import { toggleCartHidden } from "../../redux/cart/cart.actions";
+import {selectCartItems} from '../../redux/cart/cart.selectors';
+import {toggleCartHidden} from "../../redux/cart/cart.actions";
 
-import CustomButtonComponent from '../custom-button/custom.button.component';
+import CustomButton from '../custom-button/custom.button.component';
 import CartItem from '../cart-item/cart-item.component';
 
 import './cart-dropdown.styles.scss';
@@ -25,12 +25,12 @@ const CartDropdown = ({ cartItems, history, dispatch }) => {
                     <span className="empty-message">{t('cart.empty')}</span>
                 )}
             </div>
-            <CustomButtonComponent onClick={ () => {
+            <CustomButton onClick={ () => {
                 history.push('/checkout');
                 dispatch(toggleCartHidden());
             }}>
                 {t('cart.go-to-checkout').toUpperCase()}
-            </CustomButtonComponent>
+            </CustomButton>
         </div>
     );
 };

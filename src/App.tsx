@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Redirect, Route, Switch} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {createStructuredSelector, Selector} from 'reselect/lib';
@@ -25,7 +25,7 @@ interface AppProps {
     currentUser: User | null;
 }
 
-class App extends React.Component<AppProps> {
+class App extends Component<AppProps> {
     unsubscribeFromAuth: Unsubscribe | null = null;
 
     componentDidMount() {

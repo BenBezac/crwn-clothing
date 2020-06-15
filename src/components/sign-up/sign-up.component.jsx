@@ -3,8 +3,8 @@ import { withTranslation } from 'react-i18next';
 
 import { auth, createUserProfileDocument } from '../../firebase/firebase.utils';
 
-import FormInputComponent from '../form-input/form-input.component';
-import CustomButtonComponent from '../custom-button/custom.button.component';
+import FormInput from '../form-input/form-input.component';
+import CustomButton from '../custom-button/custom.button.component';
 
 import './sign-up.styles.scss';
 
@@ -59,7 +59,7 @@ class SignUp extends Component {
                 <span>{t('sign-up.sign-up-with-email-and-password')}</span>
 
                 <form className="sign-up-form" onSubmit={this.handleSubmit}>
-                    <FormInputComponent
+                    <FormInput
                         type="text"
                         name="displayName"
                         value={displayName}
@@ -67,7 +67,7 @@ class SignUp extends Component {
                         label={t('sign-up.display-name')}
                         handleChange={this.handleChange}
                     />
-                    <FormInputComponent
+                    <FormInput
                         type="email"
                         name="email"
                         value={email}
@@ -75,7 +75,7 @@ class SignUp extends Component {
                         label={t('sign-up.email')}
                         handleChange={this.handleChange}
                     />
-                    <FormInputComponent
+                    <FormInput
                         type="password"
                         name="password"
                         value={password}
@@ -83,7 +83,7 @@ class SignUp extends Component {
                         label={t('sign-up.password')}
                         handleChange={this.handleChange}
                     />
-                    <FormInputComponent
+                    <FormInput
                         type="password"
                         name="confirmPassword"
                         value={confirmPassword}
@@ -91,9 +91,9 @@ class SignUp extends Component {
                         label={t('sign-up.confirm-password')}
                         handleChange={this.handleChange}
                     />
-                    <CustomButtonComponent type="submit">
+                    <CustomButton type="submit">
                         {t('sign-up.submit-form')}
-                    </CustomButtonComponent>
+                    </CustomButton>
                 </form>
             </div>
         );
