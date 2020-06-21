@@ -8,14 +8,20 @@ export interface CartItem extends BasicCartItem {
     quantity: number;
 }
 
-export interface CartState {
-    hidden: boolean;
+export interface BasicCartState {
     cartItems: Array<CartItem>;
 }
 
-export interface CheckoutDesiredState {
+export interface CartState extends BasicCartState {
+    hidden: boolean;
+}
+
+export interface CheckoutDesiredState extends BasicCartState {
     total: number;
-    cartItems: Array<CartItem>;
+}
+
+export interface DesiredCartIconState {
+    itemCount: number;
 }
 
 export const TOGGLE_CART_HIDDEN = 'TOGGLE_CART_HIDDEN';
@@ -25,7 +31,6 @@ export const CLEAR_ITEM_FROM_CART = 'CLEAR_ITEM_FROM_CART';
 
 interface ToggleCartHiddenAction {
     type: typeof TOGGLE_CART_HIDDEN;
-    payload: CartItem;
 }
 
 interface AddItemAction {

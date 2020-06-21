@@ -6,43 +6,5 @@
     "hats": "chapeaux",
     "jackets": "vestes",
     "sneakers": "sneakers"
-  },
-  "sign-in": {
-    "has-already-an-account": "J'ai déjà un compte",
-    "sign-in-with-email-and-password": "Se connecter avec votre adresse e-mail et votre mot de passe",
-    "email": "Adresse E-mail",
-    "password": "Mot de Passe",
-    "submit-form": "Connexion",
-    "with-google": "Connexion avec Google"
-  },
-  "sign-up": {
-    "not-having-account": "Je n'ai pas de compte",
-    "sign-up-with-email-and-password": "Créer un compte avec votre adresse e-mail et votre mot de passe",
-    "display-name": "Nom",
-    "email": "Adresse E-mail",
-    "password": "Mot de Passe",
-    "confirm-password": "Mot de Passe (confirmer)",
-    "submit-form": "Créer le compte",
-    "password-dont-match": "Les Mots de Passe ne correspondentp as !"
-  },
-  "header": {
-    "shop": "boutique",
-    "contact": "contact",
-    "sign-in": "Connexion",
-    "sign-out": "Déconnexion"
-  },
-  "cart": {
-    "go-to-checkout": "commander",
-    "add-to-cart": "ajouter au panier",
-    "empty": "Votre panier est vide"
-  },
-  "checkout": {
-    "header": {
-      "product": "Produit",
-      "description": "Description",
-      "quantity": "Quantité",
-      "price": "Prix",
-      "remove": "Supprimer"
-    }
   }
 }

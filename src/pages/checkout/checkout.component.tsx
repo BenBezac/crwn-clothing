@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { useTranslation, UseTranslationResponse } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createStructuredSelector, Selector } from 'reselect';
@@ -10,7 +10,6 @@ import {
 
 import CheckoutItem from '../../components/checkout-item/checkout-item.component';
 
-import './checkout.styles.scss';
 import { CartItem, CheckoutDesiredState } from '../../redux/cart/types';
 import { State } from '../../redux/root-reducer';
 
@@ -19,26 +18,26 @@ interface CheckoutProps {
     total: number;
 }
 
-const CheckoutPage: React.FC<CheckoutProps> = ({ cartItems, total }) => {
-    const { t }: UseTranslationResponse = useTranslation();
+const CheckoutPage: FC<CheckoutProps> = ({ cartItems, total }) => {
+    const { t }: UseTranslationResponse = useTranslation('checkout');
 
     return (
         <div className="checkout-page">
             <div className="checkout-header">
                 <div className="header-block">
-                    <span>{t('checkout.header.product')}</span>
+                    <span>{t('header.product')}</span>
                 </div>
                 <div className="header-block">
-                    <span>{t('checkout.header.description')}</span>
+                    <span>{t('header.description')}</span>
                 </div>
                 <div className="header-block">
-                    <span>{t('checkout.header.quantity')}</span>
+                    <span>{t('header.quantity')}</span>
                 </div>
                 <div className="header-block">
-                    <span>{t('checkout.header.price')}</span>
+                    <span>{t('header.price')}</span>
                 </div>
                 <div className="header-block">
-                    <span>{t('checkout.header.remove')}</span>
+                    <span>{t('header.remove')}</span>
                 </div>
             </div>
             {cartItems.map((cartItem: CartItem) => (
@@ -52,7 +51,7 @@ const CheckoutPage: React.FC<CheckoutProps> = ({ cartItems, total }) => {
 const mapStateToProps: Selector<
     State,
     CheckoutDesiredState
-    > = createStructuredSelector<State, CheckoutDesiredState>({
+> = createStructuredSelector<State, CheckoutDesiredState>({
     cartItems: selectCartItems,
     total: selectCartTotal,
 });

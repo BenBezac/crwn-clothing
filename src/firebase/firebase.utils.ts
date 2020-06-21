@@ -1,17 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
-
-interface Configuration {
-    apiKey: string | undefined;
-    authDomain: string;
-    databaseURL: string;
-    projectId: string;
-    storageBucket: string;
-    messagingSenderId: string;
-    appId: string;
-    measurementId: string;
-}
+import { AdditionalData, Configuration } from './type';
 
 const config: Configuration = {
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -34,10 +24,10 @@ export const fs: firebase.firestore.Firestore = firebase.firestore();
 export const signInWithGoogle: Function = () => auth.signInWithPopup(provider);
 export const createUserProfileDocument: (
     userAuth: firebase.User,
-    additionalData?: JSON
+    additionalData?: AdditionalData
 ) => Promise<
     firebase.firestore.DocumentReference<firebase.firestore.DocumentData>
-> = async (userAuth: firebase.User, additionalData?: JSON) => {
+> = async (userAuth: firebase.User, additionalData?: AdditionalData) => {
     if (!userAuth) throw new Error('userAuth is undefined');
 
     const userRef: firebase.firestore.DocumentReference = fs.doc(

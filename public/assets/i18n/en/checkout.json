@@ -1,0 +1,9 @@
+{
+  "header": {
+    "product": "Product",
+    "description": "Description",
+    "quantity": "Quantity",
+    "price": "Price",
+    "remove": "Remove"
+  }
+}

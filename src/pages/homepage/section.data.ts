@@ -1,9 +1,9 @@
 export interface Section {
-    id: number,
-    title: string,
-    imageUrl: string,
-    linkUrl: string,
-    size?: string,
+    id: number;
+    title: string;
+    imageUrl: string;
+    linkUrl: string;
+    size?: string;
 }
 
 const SECTION_DATA: Array<Section> = [

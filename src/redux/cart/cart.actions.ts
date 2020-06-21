@@ -1,6 +1,13 @@
-import {ADD_ITEM, CartActionTypes, CartItem, CLEAR_ITEM_FROM_CART, REMOVE_ITEM, TOGGLE_CART_HIDDEN} from "./types";
+import {
+    ADD_ITEM,
+    CartActionTypes,
+    CartItem,
+    CLEAR_ITEM_FROM_CART,
+    REMOVE_ITEM,
+    TOGGLE_CART_HIDDEN,
+} from './types';
 
-export const toggleCartHidden = () => ({
+export const toggleCartHidden = (): CartActionTypes => ({
     type: TOGGLE_CART_HIDDEN,
 });
 

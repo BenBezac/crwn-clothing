@@ -1,0 +1,5 @@
+{
+  "go-to-checkout": "commander",
+  "add-to-cart": "ajouter au panier",
+  "empty": "Votre panier est vide"
+}
